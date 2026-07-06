@@ -7,8 +7,8 @@ class Solution:
             p+=i
             rem = p%k
             if rem in d:
+                t+=d[rem]
                 d[rem]+=1
-                t+=d[rem]-1
             else:
                 d[rem]=1
 

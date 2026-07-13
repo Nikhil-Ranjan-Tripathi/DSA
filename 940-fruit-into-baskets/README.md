@@ -9,35 +9,26 @@
 </ul>
 
 <p>Given the integer array <code>fruits</code>, return <em>the <strong>maximum</strong> number of fruits you can pick</em>.</p>
-
-<p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
-
 <pre>
 <strong>Input:</strong> fruits = [<u>1,2,1</u>]
 <strong>Output:</strong> 3
 <strong>Explanation:</strong> We can pick from all 3 trees.
 </pre>
-
 <p><strong class="example">Example 2:</strong></p>
-
 <pre>
 <strong>Input:</strong> fruits = [0,<u>1,2,2</u>]
 <strong>Output:</strong> 3
 <strong>Explanation:</strong> We can pick from trees [1,2,2].
 If we had started at the first tree, we would only pick from trees [0,1].
 </pre>
-
 <p><strong class="example">Example 3:</strong></p>
-
 <pre>
 <strong>Input:</strong> fruits = [1,<u>2,3,2,2</u>]
 <strong>Output:</strong> 4
 <strong>Explanation:</strong> We can pick from trees [2,3,2,2].
 If we had started at the first tree, we would only pick from trees [1,2].
 </pre>
-
-<p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>

@@ -19,7 +19,6 @@
 <strong>Output:</strong> 0
 </pre>
 
-<p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>

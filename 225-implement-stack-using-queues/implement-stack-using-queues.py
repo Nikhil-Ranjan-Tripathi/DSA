@@ -8,7 +8,6 @@ class MyStack:
     def push(self, x: int) -> None:
         self.q.append(x)
 
-        # Rotate the queue so the new element comes to the front
         for _ in range(len(self.q) - 1):
             self.q.append(self.q.popleft())
 

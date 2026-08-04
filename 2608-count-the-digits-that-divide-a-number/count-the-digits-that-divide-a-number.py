@@ -1,12 +1,16 @@
 class Solution:
     def countDigits(self, n: int) -> int:
-        m = n
-        c = 0
+        og = n
+        def solve(n):
+            if n==0:
+                return 0
+            else:
+                if n%10!=0 and og%(n%10)==0:
+                    return 1+solve(n//10)
+                else:
+                    return solve(n//10)
 
-        while n>0:
-            a = n%10
-            if m%a==0:
-                c+=1
-            n//=10
+        return solve(n)
 
-        return c
+            
+

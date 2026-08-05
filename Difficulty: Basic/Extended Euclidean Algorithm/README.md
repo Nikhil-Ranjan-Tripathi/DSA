@@ -1,0 +1,10 @@
+<h2><a href="https://www.geeksforgeeks.org/problems/extended-euclidean-algorithm3848/1">Extended Euclidean Algorithm</a></h2><h3>Difficulty Level : Difficulty: Basic</h3><hr><div class="problems_problem_content__Xm_eO" style="--text-color: var(--problem-text-color);"><p class="PDq2pG_selectionAnchorContainer" data-start="104" data-end="282"><span style="font-size: 14pt;">Given two integers <strong data-start="123" data-end="128">a</strong> and <strong data-start="133" data-end="138">b</strong>, use the Extended Euclidean Algorithm to compute their Greatest Common Divisor (GCD) along with two integers x and y such that: <span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="mord mathnormal">a</span><span class="mord mathnormal">x</span><span class="mbin">+</span></span><span class="base"><span class="mord mathnormal">b</span><span class="mord mathnormal">y</span><span class="mrel">=</span></span><span class="base"><span class="mop">gcd</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mord mathnormal">b</span><span class="mclose">). </span></span></span></span></span></span></p>
+<p class="PDq2pG_selectionAnchorContainer" data-start="104" data-end="282"><span style="font-size: 18px;"><strong>Examples :</strong></span></p>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>a = 35, b = 15
+<strong>Output: </strong>5 1 -2</span><span style="font-size: 18px;">
+<strong>Explanation: </strong>gcd(a,b) = 5, x = 5, y = -2, 35*1 + 15*(-2) = 5</span>
+</pre>
+<pre><span style="font-size: 18px;"><strong>Input: </strong>a = 30, b = 20
+<strong>Output: </strong>10 1 -1
+<strong>Explanation: </strong>gcd(30,20) = 10, x = 1, y = -1, </span><span style="font-size: 18px;">30*(1) + 20*(-1) = 10</span>
+</pre></div><br><p><span style=font-size:18px><strong>Topic Tags : </strong><br><code>Mathematical</code>&nbsp;

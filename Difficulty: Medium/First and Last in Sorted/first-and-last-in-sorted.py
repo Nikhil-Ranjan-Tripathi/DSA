@@ -18,4 +18,25 @@ class Solution:
         solve(0, l)    
         
         return l
+
+
+
+""" 
+class Solution:
+    def find(self, arr, x):
+        l = []
+        if x not in arr:
+            return [-1, -1]
+        def solve(n, l):
+            if n==len(arr):
+                return
+            if arr[n]==x:
+                l.append(n)
+                    
+            solve(n+1, l)
+            
+        solve(0, l)    
         
+        return [l[0], l[-1]] #print only first and last element
+        
+"""

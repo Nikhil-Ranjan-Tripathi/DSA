@@ -2,29 +2,25 @@ class Solution:
     def minJumps(self, arr):
         n = len(arr)
 
-        if n == 1:
+        if n <= 1:
             return 0
 
         if arr[0] == 0:
             return -1
 
-        maxReach = arr[0]
-        steps = arr[0]
-        jumps = 1
+        jumps = 0
+        current_end = 0
+        farthest = 0
 
-        for i in range(1, n):
-            if i == n - 1:
-                return jumps
+        for i in range(n - 1):
 
-            maxReach = max(maxReach, i + arr[i])
-            steps -= 1
+            farthest = max(farthest, i + arr[i])
 
-            if steps == 0:
+            if i == current_end:
                 jumps += 1
+                current_end = farthest
 
-                if i >= maxReach:
-                    return -1
-
-                steps = maxReach - i
+                if current_end >= n - 1:
+                    return jumps
 
         return -1

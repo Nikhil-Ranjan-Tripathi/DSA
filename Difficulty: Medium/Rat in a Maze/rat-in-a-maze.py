@@ -1,36 +1,33 @@
 class Solution:
     def ratInMaze(self, maze: list[list[int]]) -> list[str]:
-        n = len(maze)
-        result = []
+        # code here
+        m = len(maze)
         
-        if maze[n-1][n-1]==0 or maze[0][0]==0:
-            return result
+        paths = []
         
-        def isSafe(row, col):
-            return 0<=row<n and 0<=col<n and maze[row][col]==1
+        visited = [[False]*m for _ in range(m)]
         
-        def dfs(row, col, path):
-            if row==n-1 and col==n-1:
-                result.append(path)
+        def is_safe(r,c):
+            return (0<=r<m and 0<=c<m and maze[r][c]==1 and visited[r][c]==False)
+                
+        
+        def dfs(r,c,path):
+            if not is_safe(r,c):
                 return
             
-            directions = [(1, 0, "D"), (0, -1, "L"), (0, 1, "R"), (-1, 0, "U")]
+            if r==m-1 and c==m-1:
+                paths.append(path)
+                return
             
-            for dr, dc, direction in directions:
-                new_row = row+dr
-                new_col = col+dc
-                
-                if isSafe(new_row, new_col):
-                    maze[new_row][new_col] = -1 #mark the indices
-                    
-                    dfs(new_row, new_col, path+direction)
-                    
-                    maze[new_row][new_col]=1
-                    
-                    
-        # Mark starting cell as visited 
-        maze[0][0] = -1 
-        dfs(0, 0, "") 
-        return result
-                    
-                    
+            visited[r][c]=True
+            
+            dfs(r+1,c,path+'D')
+            dfs(r, c-1, path +'L')
+            dfs(r,c+1,path+'R')
+            dfs(r-1,c,path+'U')
+            
+            visited[r][c]=False
+            
+        dfs(0,0,'')
+        
+        return paths

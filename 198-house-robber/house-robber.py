@@ -18,5 +18,14 @@ class Solution:
         
 
         
-
+"""
+def dfs(i):
+    if i>=len(h):
+        return 0
+    
+    return h[i] + max(dfs(i+2), dfs(i+3))
+    
+    
+print(max(dfs(0), dfs(1)))
+"""
         

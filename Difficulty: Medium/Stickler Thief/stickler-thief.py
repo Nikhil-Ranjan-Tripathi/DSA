@@ -1,16 +1,14 @@
 class Solution:  
     def findMaxSum(self, arr):
-        n = len(arr)
-        if n==1:
-            return arr[0]
-            
-        d = [0]*n
-        d[0] = arr[0]
-        d[1] = max(arr[1], arr[0])
+        # code here
+        memo = {}
+        def solve(i):
+            if i>=len(arr):
+                return 0
+            if i in memo:
+                return memo[i]
+                
+            memo[i] = arr[i] + max(solve(i+2), solve(i+3))
+            return memo[i]
         
-        for i in range(2, len(arr)):
-            d[i] = max(d[i-1], d[i-2]+arr[i])
-            
-        return d[-1]
-                
-                
+        return max(solve(0), solve(1))

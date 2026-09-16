@@ -22,3 +22,21 @@ class Solution:
                 s+=i
 
         return s
+
+"""
+class Solution:
+    def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
+    
+        def sum_value(node,curr):
+            if not node:
+                return 0
+            if node.val < low:
+                curr = sum_value(node.right,curr)
+            elif node.val > high:
+                curr = sum_value(node.left,curr)
+            else:
+                curr = node.val + sum_value(node.left,curr) + sum_value(node.right,curr)
+                  
+            return curr
+        return sum_value(root,0)            
+"""

@@ -22,7 +22,4 @@ class Solution:
             r[i].left = None
             r[i].right = r[i+1]
 
-        # r[-1].left = None
-        # r[-1].roght = None
-
         return r

@@ -20,3 +20,18 @@ class Solution:
             dp[i] = min(one, two)
 
         return dp[n-1]
+"""
+class Solution:
+    def minCost(self, height: list[int]) -> int:
+        if len(height)<2:
+            return 0
+        
+        def solve(i, j):
+            if j>=len(height):
+                return float('inf')
+            cost = abs(height[j]-height[i])
+            if j==len(height)-1:
+                return cost
+            return cost+min(solve(j,j+1), solve(j,j+2))
+        return min(solve(0, 1), solve(0,2))
+"""

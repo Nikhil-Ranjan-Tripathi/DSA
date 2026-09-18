@@ -18,20 +18,20 @@ class Solution:
 
         target = s // 2
 
-        def solve(i, su):
-            if su == target:
-                return True
+        # def solve(i, su):
+        #     if su == target:
+        #         return True
 
-            if i == len(nums) or su > target:
-                return False
+        #     if i == len(nums) or su > target:
+        #         return False
 
-            take = solve(i + 1, su + nums[i])
-            skip = solve(i + 1, su)
+        #     take = solve(i + 1, su + nums[i])
+        #     skip = solve(i + 1, su)
 
-            return take or skip
+        #     return take or skip
 
-        if not trying1():
-            return solve(0, 0)
-        else:
-            return True
+        # if not trying1():
+        #     return solve(0, 0)
+        # else:
+        #     return True
         

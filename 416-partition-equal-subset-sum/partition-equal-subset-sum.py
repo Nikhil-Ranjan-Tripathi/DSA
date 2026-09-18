@@ -34,4 +34,26 @@ class Solution:
         #     return solve(0, 0)
         # else:
         #     return True
+
+"""
+a = [1,2,3,5]
+
+a.sort()
+
+store = [a[0]]
+temp = []
+c = False
+for i in range(len(a)):
+    for j in range(len(store)):
+        if store[j]+a[i]==sum(a)/2:
+            print("true")
+            c = True
+    if c==True:
+            break
+        
+    temp.append(store[j]+a[i])
+        
+    store+=temp   
+    store.append(a[i]) 
+"""
         

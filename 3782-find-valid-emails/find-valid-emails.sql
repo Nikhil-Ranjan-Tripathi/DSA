@@ -5,3 +5,7 @@ order by user_id
 
 -- *  →  0 or more
 -- +  →  1 or more
+-- SELECT user_id, email
+-- FROM Users
+-- WHERE email REGEXP '^[A-Za-z0-9_]+@[A-Za-z]+\\.com$'
+-- ORDER BY user_id ASC;

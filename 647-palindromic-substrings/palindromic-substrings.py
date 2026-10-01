@@ -12,4 +12,5 @@ class Solution:
                     a+=s[j]
                     if a==a[::-1]:
                         maxi+=1
+
         return maxi

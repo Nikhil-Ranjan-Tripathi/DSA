@@ -16,3 +16,18 @@ class Solution:
             freq[prefix] += 1
 
         return count
+
+# s = 0
+
+# for i in range(len(a)):
+#     b = 0
+#     j = i
+#     while j<len(a):
+#         b+=a[j]
+#         if b<t:
+#             j+=1
+#         elif b>t:
+#             break
+#         else:
+#             s+=1
+#             break 

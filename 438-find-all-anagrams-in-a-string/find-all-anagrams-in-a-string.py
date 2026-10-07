@@ -1,43 +1,63 @@
-from typing import List
+# from typing import List
+# from collections import Counter
+# class Solution:
+#     def findAnagrams(self, s: str, p: str) -> List[int]:
+        # if len(p) > len(s):
+        #     return []
 
-class Solution:
-    def findAnagrams(self, s: str, p: str) -> List[int]:
-        if len(p) > len(s):
-            return []
+        # p_count = [0] * 26
+        # window = [0] * 26
 
-        p_count = [0] * 26
-        window = [0] * 26
+        # for c in p:
+        #     p_count[ord(c) - ord('a')] += 1
 
-        for c in p:
-            p_count[ord(c) - ord('a')] += 1
+        # for c in s[:len(p)]:
+        #     window[ord(c) - ord('a')] += 1
 
-        for c in s[:len(p)]:
-            window[ord(c) - ord('a')] += 1
+        # ans = []
 
-        ans = []
+        # if window == p_count:
+        #     ans.append(0)
 
-        if window == p_count:
-            ans.append(0)
+        # for i in range(len(p), len(s)):
+        #     window[ord(s[i]) - ord('a')] += 1
+        #     window[ord(s[i - len(p)]) - ord('a')] -= 1
 
-        for i in range(len(p), len(s)):
-            window[ord(s[i]) - ord('a')] += 1
-            window[ord(s[i - len(p)]) - ord('a')] -= 1
+        #     if window == p_count:
+        #         ans.append(i - len(p) + 1)
 
-            if window == p_count:
-                ans.append(i - len(p) + 1)
+        # return ans
 
-        return ans
-
-""" ALTERNATE SOLUTION BUT USE OF COUNTER MAKES CODE BULKY AND SLOW(BUT IT'S SIMPLER)
 from collections import Counter
+
 class Solution:
-    def findAnagrams(self, s: str, p: str) -> List[int]:
-        n = len(s)
-        m = len(p)
-        p_c = Counter(p)
+    def findAnagrams(self, s: str, p: str) -> list[int]:
+
         ans = []
-        for i in range(n-m + 1):
-            if Counter(s[i:i+m]) == p_c:
-                ans.append(i)
+
+        p_count = Counter(p)
+        window = Counter()
+
+        left = 0
+        right = 0
+
+        while right < len(s):
+
+            # Add new character
+            window[s[right]] += 1
+            right += 1
+
+            # Keep window size equal to len(p)
+            if right - left > len(p):
+                window[s[left]] -= 1
+
+                if window[s[left]] == 0:
+                    del window[s[left]]
+
+                left += 1
+
+            # Check window
+            if window == p_count:
+                ans.append(left)
+
         return ans
-"""

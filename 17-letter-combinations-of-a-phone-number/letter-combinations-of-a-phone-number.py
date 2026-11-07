@@ -4,7 +4,7 @@ class Solution:
         if not digits:
             return []
 
-        mapping = {
+        d = {
             "2": "abc",
             "3": "def",
             "4": "ghi",
@@ -15,24 +15,17 @@ class Solution:
             "9": "wxyz"
         }
 
-        result = []
-        current = []
+        res= []
 
-        def backtrack(index):
-            if index == len(digits):
-                result.append("".join(current))
+        def backtrack(curr, i):
+            if len(curr) == len(digits):
+                res.append("".join(curr))
                 return
 
-            letters = mapping[digits[index]]
+            for c in d[digits[i]]:
+                curr.append(c)
+                backtrack(curr, i + 1)
+                curr.pop()
 
-            for char in letters:
-
-                current.append(char)
-
-                backtrack(index + 1)
-
-                current.pop()
-
-        backtrack(0)
-
-        return result
+        backtrack([], 0)
+        return res

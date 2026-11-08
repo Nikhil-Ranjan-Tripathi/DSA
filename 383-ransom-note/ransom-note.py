@@ -12,3 +12,27 @@ class Solution:
                     return False
 
         return True
+
+
+"""
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if len(ransomNote)>len(magazine):
+            return False
+        for c in set(ransomNote):
+            if magazine.count(c)<ransomNote.count(c):
+                return False
+
+        return True
+
+# Python's count() counts how many times a character appears in a string.
+
+# magazine = "aabbbc"
+# ransomNote = "aabb"
+
+# magazine.count('a')     # 2
+# ransomNote.count('a')   # 1
+
+# magazine.count('b')     # 3
+# ransomNote.count('b')   # 2
+"""

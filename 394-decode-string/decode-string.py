@@ -21,3 +21,4 @@ class Solution:
                 curr+=ch
         
         return curr
+

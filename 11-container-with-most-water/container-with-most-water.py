@@ -4,8 +4,7 @@ class Solution:
         j = len(h)-1
         m = 0
         while i<j:
-            a = min(h[i],h[j])*(j-i)
-            m = max(m, a)
+            m = max(m, min(h[i],h[j])*(j-i))
             if h[i]<=h[j]:
                 i+=1
             elif h[i]>h[j]:
